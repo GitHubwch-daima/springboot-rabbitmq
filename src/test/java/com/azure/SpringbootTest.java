@@ -5,6 +5,8 @@ import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.annotation.Resource;
+import java.util.HashMap;
+import java.util.Map;
 
 @SpringBootTest
 public class SpringbootTest {
@@ -19,6 +21,7 @@ public class SpringbootTest {
 
     @Test
     public void testWork() {
+
         for (int i = 0; i < 10; i++) {
             rabbitTemplate.convertAndSend("work", "work：" + (i + 1));
         }
